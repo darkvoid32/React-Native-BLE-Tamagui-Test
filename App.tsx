@@ -7,8 +7,10 @@ import {
   MD3LightTheme,
   PaperProvider,
 } from 'react-native-paper';
+import React, { useState } from "react";
+import useBLE from "./useBLE";
 
-export default function App() {
+const App = () => {
   const colorScheme = useColorScheme();
   const { theme } = useMaterial3Theme();
 
@@ -16,6 +18,34 @@ export default function App() {
     colorScheme === 'dark'
       ? { ...MD3DarkTheme, colors: theme.dark }
       : { ...MD3LightTheme, colors: theme.light };
+
+  const {
+    requestPermissions,
+    scanForPeripherals,
+    allDevices,
+    connectToDevice,
+    connectedDevice,
+    heartRate,
+    disconnectFromDevice,
+  } = useBLE();
+
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+
+  const scanForDevices = async () => {
+    const isPermissionsEnabled = await requestPermissions();
+    if (isPermissionsEnabled) {
+      scanForPeripherals();
+    }
+  };
+
+  const hideModal = () => {
+    setIsModalVisible(false);
+  };
+
+  const openModal = async () => {
+    scanForDevices();
+    setIsModalVisible(true);
+  };
       
   // TODO: Create component to list scanned devices
   // TODO: Create background BLE scanning
@@ -29,3 +59,5 @@ export default function App() {
     </PaperProvider>
   );
 }
+
+export default App;
