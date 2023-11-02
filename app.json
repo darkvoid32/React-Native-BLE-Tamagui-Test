@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.ReactNativePaperTest"
     },
     "android": {
       "adaptiveIcon": {
@@ -44,6 +45,11 @@
           "bluetoothAlwaysPermission": "Allow $(PRODUCT_NAME) to connect to bluetooth devices"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "56d98e70-6b55-4081-b338-9236d5426609"
+      }
+    }
   }
 }

@@ -8148,10 +8148,10 @@ react-native-base64@^0.2.1:
   resolved "https://registry.yarnpkg.com/react-native-base64/-/react-native-base64-0.2.1.tgz#3d0e73a649c4c0129f7b7695d3912456aebae847"
   integrity sha512-eHgt/MA8y5ZF0aHfZ1aTPcIkDWxza9AaEk4GcpIX+ZYfZ04RcaNahO+527KR7J44/mD3efYfM23O2C1N44ByWA==
 
-react-native-ble-plx@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-ble-plx/-/react-native-ble-plx-3.1.0.tgz#4427c4866f0ac0c0b2eb8aea011d03f70b1ddaf5"
-  integrity sha512-9CGoQZkEZNv2CT+wUtAbUEE9PorcR/xJBeL7/ZlpVCNKVS/WbmzeNaxV3NuYFEYRkOJBpTCTHFwxLv/tG5JkTw==
+react-native-ble-plx@^3.1.2-rc.0:
+  version "3.1.2-rc.0"
+  resolved "https://registry.yarnpkg.com/react-native-ble-plx/-/react-native-ble-plx-3.1.2-rc.0.tgz#89bb41933db67a1163ade4f91d5d5b89455c9a08"
+  integrity sha512-ygcngEvFRCMwQiige9YrBooNLVuok5qKNhWIfWZt00YmVZjgkpBmexzIHGv1dnE/TGlXosKxxh9jBl9rpEBxxg==
   dependencies:
     "@expo/config-plugins" "^7.2.5"
 

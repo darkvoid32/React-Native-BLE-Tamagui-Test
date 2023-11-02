@@ -9,6 +9,7 @@ import {
 } from 'react-native-paper';
 import React, { useState } from "react";
 import useBLE from "./useBLE";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const App = () => {
   const colorScheme = useColorScheme();
@@ -19,50 +20,45 @@ const App = () => {
       ? { ...MD3DarkTheme, colors: theme.dark }
       : { ...MD3LightTheme, colors: theme.light };
 
-  // const {
-  //   requestPermissions,
-  //   scanForPeripherals,
-  //   allDevices,
-  //   connectToDevice,
-  //   connectedDevice,
-  //   heartRate,
-  //   disconnectFromDevice,
-  // } = useBLE();
+  const {
+    requestPermissions,
+    scanForPeripherals,
+    allDevices,
+    connectToDevice,
+    connectedDevice,
+    disconnectFromDevice,
+  } = useBLE();
 
-  // const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
-  // const scanForDevices = async () => {
-  //   const isPermissionsEnabled = await requestPermissions();
-  //   if (isPermissionsEnabled) {
-  //     scanForPeripherals();
-  //   }
-  // };
+  const scanForDevices = async () => {
+    const isPermissionsEnabled = await requestPermissions();
+    if (isPermissionsEnabled) {
+      scanForPeripherals();
+    }
+  };
 
-  // const hideModal = () => {
-  //   setIsModalVisible(false);
-  // };
+  const hideModal = () => {
+    setIsModalVisible(false);
+  };
 
-  // const openModal = async () => {
-  //   scanForDevices();
-  //   setIsModalVisible(true);
-  // };
+  const openModal = async () => {
+    scanForDevices();
+    setIsModalVisible(true);
+  };
       
   // // TODO: Create component to list scanned devices
   // TODO: Create background BLE scanning
 
   return (
-    // <PaperProvider theme={paperTheme}>
-    //   <View>
-    //     <Text>Open up App.js to start working on your app! Testing</Text>
-    //     <StatusBar style="auto" />
-    //   </View>
-    // </PaperProvider>
-    <>
-      <View>
-        <Text>Open up App.js to start working on your app! Testing</Text>
-        <StatusBar style="auto" />
-      </View>
-    </>
+    <PaperProvider theme={paperTheme}>
+      <SafeAreaView>
+        <View>
+          <Text>Open up App.js to start working on your app! Testing</Text>
+          <StatusBar style="auto" />
+        </View>
+      </SafeAreaView>
+    </PaperProvider>
   );
 }
 
