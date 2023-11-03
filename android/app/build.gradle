@@ -81,9 +81,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.ReactNativePaperTest'
+    namespace 'com.darkv322.ReactNativePaperTest'
     defaultConfig {
-        applicationId 'com.anonymous.ReactNativePaperTest'
+        applicationId 'com.darkv322.ReactNativePaperTest'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

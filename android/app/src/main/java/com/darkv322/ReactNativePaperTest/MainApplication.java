@@ -1,4 +1,4 @@
-package com.anonymous.ReactNativePaperTest;
+package com.darkv322.ReactNativePaperTest;
 
 import android.app.Application;
 import android.content.res.Configuration;

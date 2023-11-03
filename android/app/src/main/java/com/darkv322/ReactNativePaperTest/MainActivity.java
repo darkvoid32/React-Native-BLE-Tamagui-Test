@@ -1,4 +1,4 @@
-package com.anonymous.ReactNativePaperTest;
+package com.darkv322.ReactNativePaperTest;
 
 import android.os.Build;
 import android.os.Bundle;

@@ -15,8 +15,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.ReactNativePaperTest"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -28,7 +27,7 @@
         "android.permission.BLUETOOTH_ADMIN",
         "android.permission.BLUETOOTH_CONNECT"
       ],
-      "package": "com.anonymous.ReactNativePaperTest"
+      "package": "com.darkv322.ReactNativePaperTest"
     },
     "web": {
       "favicon": "./assets/favicon.png"
