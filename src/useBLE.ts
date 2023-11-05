@@ -1,4 +1,4 @@
-/* eslint-disable no-bitwise */
+  /* eslint-disable no-bitwise */
 import React, { useRef, useState, useEffect } from "react";
 import { PermissionsAndroid, Platform } from "react-native";
 import {

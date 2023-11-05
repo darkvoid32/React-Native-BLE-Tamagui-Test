@@ -9,7 +9,6 @@ export default function App() {
     scanForPeripherals,
     allDevices,
     connectedDevice,
-    heartRate,
   } = useBLE();
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
