@@ -1,29 +1,27 @@
-import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import React, { useEffect } from 'react';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { Device } from 'react-native-ble-plx';
 
-const DeviceList = () => {
-    return (
-      <View style={styles.container}>
-        <FlatList
-          data={[
-            {key: 'Devin'},
-            {key: 'Dan'},
-            {key: 'Dominic'},
-            {key: 'Jackson'},
-            {key: 'James'},
-            {key: 'Joel'},
-            {key: 'John'},
-            {key: 'Jillian'},
-            {key: 'Jimmy'},
-            {key: 'Julie'},
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-        />
-      </View>
-    );
-  };
+interface DeviceListProps {
+  devices: Device[];
+}
+
+const DeviceList: React.FC<DeviceListProps> = ({ devices }) => {
+  useEffect(() => {}, [devices]);
+
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={devices
+          .filter(device => device.name !== null) // Exclude devices with null names
+          .map(device => ({ key: device.name }))}
+        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+      />
+    </View>
+  );
+};
   
-  export default DeviceList;
+export default DeviceList;
 
 const styles = StyleSheet.create({
   container: {

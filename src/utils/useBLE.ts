@@ -35,8 +35,14 @@ function useBLE(): BluetoothLowEnergyApi {
     }
 
     return () => {
-      bleManager.current?.stopDeviceScan();
-      bleManager.current?.destroy();
+      try {
+        if (bleManager != null) {
+          bleManager.current?.stopDeviceScan();
+          bleManager.current?.destroy();
+        }
+      } catch (error) {
+        console.error('Error initializing BleManager:', error);
+      }
     };
   }, []);
 

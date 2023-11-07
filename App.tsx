@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
+  Pressable,
 } from "react-native";
 import useBLE from "./src/utils/useBLE";
 import DeviceList from "./src/components/deviceList";
@@ -37,13 +37,14 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button
+      <Pressable
         onPress={openModal}
-        title="Scan Devices"
-        color="#841584"
         accessibilityLabel="Scan Devices"
-      />
-      <DeviceList/>
+        style={styles.pressable}
+      >
+        <Text style={styles.text}>Scan Devices</Text>
+      </Pressable>
+      <DeviceList devices={allDevices}/>
     </SafeAreaView>
   );
 }
@@ -55,4 +56,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  pressable: {
+    flex: 0.2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'beige',
+    borderWidth: 5,
+    borderRadius: 10,
+    marginTop: 50,
+    marginBottom: 20,
+    paddingHorizontal: 20,
+  },
+  list: {
+    flex: 0.8,
+    backgroundColor: 'transparent',
+  },
+  text: {
+    textAlign: 'center',
+  }
 });
