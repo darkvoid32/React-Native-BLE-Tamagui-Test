@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Pressable,
-} from "react-native";
-import useBLE from "./src/utils/useBLE";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { Text, TamaguiProvider, Button } from 'tamagui';
 import DeviceList from "./src/components/deviceList";
-import { GluestackUIProvider, Text } from "@gluestack-ui/themed"
-import { config } from "@gluestack-ui/config"
+import useBLE from "./src/utils/useBLE";
+import config from './tamagui.config';
 
 export default function App() {
   const {
@@ -37,18 +32,13 @@ export default function App() {
   };
 
   return (
-    <GluestackUIProvider config={config}>
+    <TamaguiProvider config={config}>
       <SafeAreaView style={styles.container}>
-        <Pressable
-          onPress={openModal}
-          accessibilityLabel="Scan Devices"
-          style={styles.pressable}
-        >
-          <Text style={styles.text}>Scan Devices</Text>
-        </Pressable>
-        <DeviceList devices={allDevices}/>
+        <Button onPress={openModal} style={styles.tamaguiButton} variant="outlined">Scan Devices</Button>
+        <DeviceList devices={allDevices} />
+        {/* Add any other Tamagui components or custom components here */}
       </SafeAreaView>
-    </GluestackUIProvider>
+    </TamaguiProvider>
   );
 }
 
@@ -59,22 +49,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  pressable: {
-    flex: 0.2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'beige',
-    borderWidth: 5,
+  tamaguiButton: {
+    borderWidth: 2,
     borderRadius: 10,
-    marginTop: 50,
-    marginBottom: 20,
+    marginTop: 75,
+    marginBottom: 10,
+    paddingVertical: 10,
     paddingHorizontal: 20,
   },
-  list: {
-    flex: 0.8,
-    backgroundColor: 'transparent',
-  },
-  text: {
-    textAlign: 'center',
-  }
 });

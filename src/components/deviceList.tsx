@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { Device } from 'react-native-ble-plx';
+import { Text } from 'tamagui';
+
 
 interface DeviceListProps {
   devices: Device[];
