@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "React-Native-Gluestack-Test",
-    "slug": "React-Native-Gluestack-Test",
+    "name": "React-Native-Tamagui-Test",
+    "slug": "React-Native-Tamagui-Test",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,7 +27,7 @@
         "android.permission.BLUETOOTH_ADMIN",
         "android.permission.BLUETOOTH_CONNECT"
       ],
-      "package": "com.darkv322.ReactNativeGluestackTest"
+      "package": "com.darkv322.ReactNativeTamaguiTest"
     },
     "web": {
       "favicon": "./assets/favicon.png"
