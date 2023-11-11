@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
   Pressable,
 } from "react-native";
 import useBLE from "./src/utils/useBLE";
 import DeviceList from "./src/components/deviceList";
+import { GluestackUIProvider, Text } from "@gluestack-ui/themed"
+import { config } from "@gluestack-ui/config"
 
 export default function App() {
   const {
@@ -36,16 +37,18 @@ export default function App() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Pressable
-        onPress={openModal}
-        accessibilityLabel="Scan Devices"
-        style={styles.pressable}
-      >
-        <Text style={styles.text}>Scan Devices</Text>
-      </Pressable>
-      <DeviceList devices={allDevices}/>
-    </SafeAreaView>
+    <GluestackUIProvider config={config}>
+      <SafeAreaView style={styles.container}>
+        <Pressable
+          onPress={openModal}
+          accessibilityLabel="Scan Devices"
+          style={styles.pressable}
+        >
+          <Text style={styles.text}>Scan Devices</Text>
+        </Pressable>
+        <DeviceList devices={allDevices}/>
+      </SafeAreaView>
+    </GluestackUIProvider>
   );
 }
 
