@@ -1,4 +1,4 @@
-package com.darkv322.ReactNativePaperTest;
+package com.darkv322.ReactNativeTamaguiTest;
 
 import android.app.Application;
 import android.content.res.Configuration;

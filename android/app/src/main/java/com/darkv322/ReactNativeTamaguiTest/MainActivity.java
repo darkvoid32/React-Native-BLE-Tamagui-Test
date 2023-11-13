@@ -1,4 +1,4 @@
-package com.darkv322.ReactNativePaperTest;
+package com.darkv322.ReactNativeTamaguiTest;
 
 import android.os.Build;
 import android.os.Bundle;
