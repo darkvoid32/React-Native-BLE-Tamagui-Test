@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   tamaguiButton: {
     borderWidth: 2,
     borderRadius: 10,
-    marginTop: 75,
+    marginTop: 125,
     marginBottom: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,

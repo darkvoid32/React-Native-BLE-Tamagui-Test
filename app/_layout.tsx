@@ -1,35 +1,10 @@
-// import { TamaguiProvider } from 'tamagui';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-// import React from "react";
-// import config from './tamagui.config';
-// import HomeScreen from "./src/screens/HomeScreen";
-
-// const Stack = createNativeStackNavigator();
-
-// export default function App() {
-//   return (
-//     <TamaguiProvider config={config}>
-//       <NavigationContainer>
-//         <Stack.Navigator>
-//           <Stack.Screen name="Home" component={HomeScreen} />
-//         </Stack.Navigator>
-//       </NavigationContainer>
-//     </TamaguiProvider>
-//   );
-// }
-
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 
 import { TamaguiProvider } from 'tamagui';
 import config from '../tamagui.config';
-
-import { useColorScheme } from './components/useColorScheme';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -69,15 +44,8 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
 
   return (
-    // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-    //   <Stack>
-    //     <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    //     <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-    //   </Stack>
-    // </ThemeProvider>
     <TamaguiProvider config={config}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

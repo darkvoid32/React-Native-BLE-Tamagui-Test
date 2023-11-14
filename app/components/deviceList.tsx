@@ -3,7 +3,6 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import { Device } from 'react-native-ble-plx';
 import { Text } from 'tamagui';
 
-
 interface DeviceListProps {
   devices: Device[];
 }
@@ -17,7 +16,7 @@ const DeviceList: React.FC<DeviceListProps> = ({ devices }) => {
         data={devices
           .filter(device => device.name !== null) // Exclude devices with null names
           .map(device => ({ key: device.name }))}
-        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+        renderItem={({ item }) => <Text style={styles.item} color={'black'}>{item.key}</Text>}
       />
     </View>
   );
