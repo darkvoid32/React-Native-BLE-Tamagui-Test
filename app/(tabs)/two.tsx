@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { Text, View } from 'tamagui';
+import { View } from 'tamagui';
+
+import BleScreen from '../screens/BleScreen';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text>Tab Two</Text>
+      <BleScreen/>
     </View>
   );
 }

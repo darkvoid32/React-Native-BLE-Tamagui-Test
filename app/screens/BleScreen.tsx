@@ -5,7 +5,7 @@ import { Button } from 'tamagui';
 import DeviceList from "../components/deviceList";
 import useBLE from "../utils/useBLE";
 
-export default function HomeScreen() {
+export default function BleScreen() {
   const {
     requestPermissions,
     scanForPeripherals,
