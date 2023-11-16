@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { Button } from 'tamagui';
+import { Text, Button } from 'tamagui';
+import { useAuth } from "../context/AuthProvider";
 
-export default function LoginScreen() {
+export default function HomeScreen() {
+  const { setUser, user } = useAuth();
+
   return (
     <SafeAreaView style={styles.container}>
-        <Button onPress={() => console.log('test')} style={styles.tamaguiButton} variant="outlined">Log In</Button>
+      <Text>Account</Text>
+      <Text>{ user && user.name }</Text>
+      <Button onPress={() => setUser(null)} style={styles.tamaguiButton} variant="outlined">
+        Log Out
+      </Button>
     </SafeAreaView>
   );
 }

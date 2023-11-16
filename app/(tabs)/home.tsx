@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
 import { View } from 'tamagui';
+import HomeScreen from '../screens/HomeScreen';
 
-import LoginScreen from '../screens/LoginScreen';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <LoginScreen/>
+      <HomeScreen/>
     </View>
   );
 }

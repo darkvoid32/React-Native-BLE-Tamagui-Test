@@ -1,7 +1,6 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Tabs } from 'expo-router';
 
 import Colors from '../constants/Colors';
 import { useColorScheme } from '../components/useColorScheme';
@@ -11,8 +10,10 @@ import { useClientOnlyValue } from '../components/useClientOnlyValue';
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
+  focused: boolean;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  const iconColor = props.focused ? 'black' : props.color;
+  return <FontAwesome size={28} style={{ marginBottom: -3, color: iconColor }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -20,26 +21,32 @@ export default function TabLayout() {
 
   return (
       <Tabs
+        initialRouteName="home"
         screenOptions={{
           tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
           // Disable the static render of the header on web
           // to prevent a hydration error in React Navigation v6.
           headerShown: useClientOnlyValue(false, true),
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name="code" color={color} focused={focused} />
+          ),
+          
         }}>
         <Tabs.Screen
-          name="index"
+          name="home"
           options={{
-            title: 'Login',
-            tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+            href: "/home",
+            title: 'Home',
           }}
         />
         <Tabs.Screen
-          name="two"
+          name="scan"
           options={{
+            href: "/scan",
             title: 'BLE',
-            tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           }}
         />
+
       </Tabs>
   );
 }

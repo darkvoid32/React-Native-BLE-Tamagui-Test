@@ -6,6 +6,7 @@ import { StatusBar } from 'react-native';
 import Colors from './constants/Colors';
 import { useColorScheme } from './components/useColorScheme';
 import { useClientOnlyValue } from './components/useClientOnlyValue';
+import { AuthProvider } from './context/AuthProvider';
 
 import { TamaguiProvider } from 'tamagui';
 import config from '../tamagui.config';
@@ -16,7 +17,6 @@ export {
 } from 'expo-router';
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
   initialRouteName: '(tabs)',
 };
 
@@ -56,10 +56,11 @@ function RootLayoutNav() {
           backgroundColor={Colors[colorScheme ?? 'light'].background}
           barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'}
         />
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-      </Stack>
+      <AuthProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
+      </AuthProvider>
     </TamaguiProvider>
   );
 }
