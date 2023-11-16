@@ -20,33 +20,32 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-      <Tabs
-        initialRouteName="home"
-        screenOptions={{
-          tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-          // Disable the static render of the header on web
-          // to prevent a hydration error in React Navigation v6.
-          headerShown: useClientOnlyValue(false, true),
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name="code" color={color} focused={focused} />
-          ),
-          
-        }}>
-        <Tabs.Screen
-          name="home"
-          options={{
-            href: "/home",
-            title: 'Home',
-          }}
-        />
-        <Tabs.Screen
-          name="scan"
-          options={{
-            href: "/scan",
-            title: 'BLE',
-          }}
-        />
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        // Disable the static render of the header on web
+        // to prevent a hydration error in React Navigation v6.
+        headerShown: useClientOnlyValue(false, true),
+        tabBarIcon: ({ color, focused }) => (
+          <TabBarIcon name="code" color={color} focused={focused} />
+        ),
+        
+      }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: "/",
+          title: 'Home',
+        }}
+      />
+      <Tabs.Screen
+        name="scan"
+        options={{
+          href: "/scan",
+          title: 'BLE',
+        }}
+      />
 
-      </Tabs>
+    </Tabs>
   );
 }

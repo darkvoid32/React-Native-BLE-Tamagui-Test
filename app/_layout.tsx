@@ -56,6 +56,7 @@ function RootLayoutNav() {
           backgroundColor={Colors[colorScheme ?? 'light'].background}
           barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'}
         />
+
       <AuthProvider>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
