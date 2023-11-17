@@ -1,15 +1,14 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { StatusBar } from 'react-native';
-import Colors from './constants/Colors';
-import { useColorScheme } from './components/useColorScheme';
-import { useClientOnlyValue } from './components/useClientOnlyValue';
-import { AuthProvider } from './context/AuthProvider';
-
 import { TamaguiProvider } from 'tamagui';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import config from '../tamagui.config';
+
+import { useColorScheme } from './components/useColorScheme';
+import { AuthProvider } from './context/AuthProvider';
+import Colors from './constants/Colors';
 
 export {
   // Catch any errors thrown by the Layout component.

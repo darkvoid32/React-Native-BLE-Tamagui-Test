@@ -1,5 +1,7 @@
-import { View } from "react-native";
+import { SafeAreaView } from "react-native";
 import { Button } from "tamagui";
+
+import { buttonStyles, containerStyles } from "../constants/Styles";
 import { useAuth } from "../context/AuthProvider";
 
 export default function Login() {
@@ -12,8 +14,8 @@ export default function Login() {
   }
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button onPress={login}>Login</Button>
-    </View>
+    <SafeAreaView style={containerStyles.container}>
+      <Button onPress={login} style={buttonStyles.roundedButton}>Login</Button>
+    </SafeAreaView>
   );
 }

@@ -1,20 +1,12 @@
-import { StyleSheet } from 'react-native';
-import { View } from 'tamagui';
-import HomeScreen from '../screens/HomeScreen';
+import { SafeAreaView } from 'react-native';
 
+import { containerStyles } from '../constants/Styles';
+import HomeScreen from '../screens/HomeScreen';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={containerStyles.container}>
       <HomeScreen/>
-    </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});

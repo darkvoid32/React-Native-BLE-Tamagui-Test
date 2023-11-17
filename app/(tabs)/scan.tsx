@@ -1,20 +1,12 @@
-import { StyleSheet } from 'react-native';
-import { View } from 'tamagui';
+import { SafeAreaView } from 'react-native';
 
+import { containerStyles } from '../constants/Styles';
 import BleScreen from '../screens/BleScreen';
 
 export default function TabTwoScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={containerStyles.container}>
       <BleScreen/>
-    </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});

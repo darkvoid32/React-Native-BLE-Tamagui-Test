@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import { Button } from 'tamagui';
 
+import { containerStyles, buttonStyles } from "../constants/Styles";
 import DeviceList from "../components/deviceList";
 import useBLE from "../utils/useBLE";
 
@@ -32,26 +33,10 @@ export default function BleScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-        <Button onPress={openModal} style={styles.tamaguiButton} variant="outlined">Scan Devices</Button>
+    <SafeAreaView style={containerStyles.container}>
+        <Button onPress={openModal} style={buttonStyles.roundedButton} variant="outlined">Scan Devices</Button>
 
         <DeviceList devices={allDevices} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  tamaguiButton: {
-    borderWidth: 2,
-    borderRadius: 10,
-    marginTop: 125,
-    marginBottom: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-});
